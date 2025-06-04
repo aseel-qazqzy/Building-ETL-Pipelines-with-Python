@@ -15,9 +15,11 @@ def extract_data(filepath: object) -> object:
     # Handle exception if any of the files are missing
     except FileNotFoundError as e:
         print(f"Error: {e}")
+        df = pd.DataFrame()
 
     # Handle any other exceptions
     except Exception as e:
         print(f"Error: {e}")
+        df = pd.DataFrame()
 
     return df
