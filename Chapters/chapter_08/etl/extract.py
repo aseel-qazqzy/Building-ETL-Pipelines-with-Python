@@ -12,14 +12,16 @@ def extract_data(filepath: object, select_cols: list, rename_cols: dict) -> obje
         # Read the CSV file and store it in a dataframe
         df = pd.read_csv(filepath)
         df = df[select_cols]
-        df = df.rename(columns={rename_cols})
+        df = df.rename(columns=rename_cols)
 
     # Handle exception if any of the files are missing
     except FileNotFoundError as e:
         print(f"Error: {e}")
+        df = pd.DataFrame()
 
     # Handle any other exceptions
     except Exception as e:
         print(f"Error: {e}")
+        df = pd.DataFrame()
 
     return df

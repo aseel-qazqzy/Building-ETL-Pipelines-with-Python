@@ -46,7 +46,7 @@ def source_data_from_api(api_endpoint):
             data = json.loads(api_response.data.decode('utf-8'))
             df_api = pd.json_normalize(data)
         else:
-            df_api = pd.Dataframe()
+            df_api = pd.DataFrame()
     except Exception as e:
         df_api = pd.DataFrame()
     return df_api

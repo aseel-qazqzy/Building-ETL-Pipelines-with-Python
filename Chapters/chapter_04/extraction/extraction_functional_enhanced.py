@@ -49,7 +49,7 @@ def source_data_from_api(api_endpoint):
             logger.info(f'{apt_status}- extracted {df_api.shape[0]} records from the csv file')
         else:
             logger.error(f'{apt_status}- error : while invoking the api {api_endpoint}')
-            df_api = pd.Dataframe()
+            df_api = pd.DataFrame()
     except Exception as e:
         logger.exception(f'{apt_status} : - exception {e} encountered while reading data from the api')
         df_api = pd.DataFrame()
